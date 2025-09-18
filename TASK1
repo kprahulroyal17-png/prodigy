@@ -1,0 +1,14 @@
+from flask import Flask, render_template_string
+
+app = Flask(_name_)
+
+# Load HTML content directly
+with open("index.html", "r", encoding="utf-8") as f:
+    html_content = f.read()
+
+@app.route("/")
+def home():
+    return render_template_string(html_content)
+
+if _name_ == "_main_":
+    app.run(debug=True)
